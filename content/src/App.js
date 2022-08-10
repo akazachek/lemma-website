@@ -1,40 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 
 function App() {
-
-  // stores responses from api
-  const [getMessage, setGetMessage] = useState({});
-
-  useEffect(() => (
-    axios.get("http://localhost:5000/api").then(response => (
-      setGetMessage(response)
-    )).catch(error => (
-      console.log(error)
-    ))
-  ), [])
+  const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div>
-          {getMessage.status === 200 ? <p>{getMessage.data.message}</p> : <p>LOADING</p>}
-        </div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>hydration test</button>
     </div>
   );
 }
