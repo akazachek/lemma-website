@@ -1,6 +1,11 @@
 import React from "react";
-import ReactDOM, { hydrateRoot } from "react-dom";
+import { hydrateRoot } from "react-dom/client";
 import App from "./App";
 
+const url = window.location.href;
+const index = url.lastIndexOf("/");
+let page = url.substring(index + 1);
+if (page === "") page = "landing";
+
 const root = document.getElementById("root");
-ReactDOM.hydrateRoot(root, <App />);
+hydrateRoot(root, <App page={page} />);

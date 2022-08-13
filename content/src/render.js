@@ -2,10 +2,11 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import App from "./App";
 
-const generateHTML = () => {
-  const html = renderToString(<App />);
+const generateHTML = (page) => {
+  const html = renderToString(<App page={page} />);
   console.log(html);
   return html;
 };
 
-generateHTML();
+const page = process.argv[2];
+generateHTML(page);

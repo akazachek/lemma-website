@@ -8,6 +8,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
     filename: "[name].js",
     sourceMapFilename: "[name].js.map",
     clean: true
@@ -23,6 +24,14 @@ module.exports = {
             presets: ["@babel/preset-env", "@babel/preset-react"]
           }
         }
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource"
       }
     ]
   },

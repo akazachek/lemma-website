@@ -15,10 +15,13 @@ api = Api(lemma)
 api.add_resource(api_handler, "/api")
 
 
-@lemma.route("/", defaults={"path": ""})
-def serve(path):
+@lemma.route("/", defaults={"page": "landing"})
+@lemma.route("/about", defaults={"page": "about"})
+@lemma.route("/founders", defaults={"page": "founders"})
+@lemma.route("/apply", defaults={"page": "apply"})
+def serve(page):
     # use node to call rendering function (i.e. rendering react to html)
-    cli = ["node", "content/dist/render.js"]
+    cli = ["node", "content/dist/render.js", page]
     render = subprocess.Popen(cli, stdout=subprocess.PIPE)
     rendered_html = render.stdout.read()
     # decode to utf-8 and then strip newline
