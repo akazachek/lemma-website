@@ -10,7 +10,7 @@ lemma = Flask(__name__,
               template_folder="./content/dist",
               static_url_path="",
               static_folder="./content/dist/")
-CORS(lemma)
+CORS(lemma)  # remove before prod
 api = Api(lemma)
 api.add_resource(api_handler, "/api")
 
@@ -26,6 +26,7 @@ def serve(page):
     rendered_html = render.stdout.read()
     # decode to utf-8 and then strip newline
     root_html = rendered_html.decode("utf-8").strip()
+    print(root_html)
     return render_template("index.html", root_html=root_html)
 
 

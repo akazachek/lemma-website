@@ -3,9 +3,12 @@ import logo from "../media/logo.png";
 
 function LogoButton() {
   return (
-    <a href="">
-      <img src={logo} />
-    </a>
+    <div id="logoContainer">
+      {" "}
+      <a href="/">
+        <img id="logo" src={logo} />
+      </a>
+    </div>
   );
 }
 

@@ -7,10 +7,10 @@ import LogoButton from "./components/LogoButton";
 function App(props) {
   return (
     <Fragment>
-      <div className="page">
+      <div id="page">
         <Page page={props.page} />
       </div>
-      <div className="navigation">
+      <div id="navigation">
         <LogoButton />
         <NavBar />
         <ContactButton />

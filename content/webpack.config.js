@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
   entry: {
@@ -9,8 +11,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
-    filename: "[name].js",
-    sourceMapFilename: "[name].js.map",
+    filename: devMode ? "[name].js" : "[name].[contenthash].js",
+    sourceMapFilename: devMode
+      ? "[name].js.map"
+      : "[name].[contenthash].js.map",
     clean: true
   },
   module: {
@@ -27,7 +31,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -43,6 +47,10 @@ module.exports = {
         */
       excludeChunks: ["render"],
       template: "./src/index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: devMode ? "[name].css" : "[name].[contenthash].css",
+      chunkFilename: devMode ? "[name].css" : "[name].[contenthash].css"
     })
   ]
 };

@@ -1,7 +1,11 @@
 import React from "react";
 
 function ContactButton() {
-  return <button>contact us</button>;
+  return (
+    <div id="contactButtonContainer">
+      <button id="contactButton">contact us</button>
+    </div>
+  );
 }
 
 export default ContactButton;

@@ -1,6 +1,7 @@
 import React from "react";
 import { hydrateRoot } from "react-dom/client";
 import App from "./App";
+import "./index.css";
 
 const url = window.location.href;
 const index = url.lastIndexOf("/");
