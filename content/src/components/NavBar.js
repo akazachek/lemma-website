@@ -3,10 +3,10 @@ import NavButton from "./NavButton";
 
 function NavBar() {
   return (
-    <div id="navBar">
+    <div id="navBar" className="flexColumn">
       <NavButton
         textShort="WHAT"
-        textLong="what does λemma provide?"
+        textLong="what does λemma offer?"
         page="about"
       />
       <NavButton
@@ -16,7 +16,7 @@ function NavBar() {
       />
       <NavButton
         textShort="HOW"
-        textLong="how do i book or work for λemma?"
+        textLong="how do i book or instruct for λemma?"
         page="apply"
       />
     </div>

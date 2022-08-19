@@ -1,11 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
 :root {
-    --largeText: 5.5vw;
-    --buttonText: 3vh;
+    --landingText: 11vh;
+    --titleText: 6vh;
+    --subtitleText: 5vh;
+    --navigationText: 4vh;
+    --mediumText: 3vh;
+    --mainColour: #68608C;
+    --accentColour: #EBD4CB;
 }
 
-body {
+/* UNIVERSAL CLASSES */
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.centred {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.onTop {
+    z-index: 100;
+}
+
+.extraOnTop {
+    z-index: 200;
+}
+
+body { 
     margin: 0;
 }
 
@@ -16,13 +47,27 @@ body {
     height: 100vh;
 }
 
+/* PAGES */
+
 #page {
-    width: 80vw
+    width: 80vw;
 }
 
+.blurb {
+    padding: 5vh;
+}
+
+.blurb h1 {
+    font-size: var(--titleText);
+}
+
+.blurb p {
+    font-size: var(--mediumText);
+}
+
+/* LANDING PAGE */
+
 #pageLanding {
-    display: flex;
-    flex-direction: row;
     width: 100%;
     height: 100%;
     align-items: center;
@@ -32,39 +77,81 @@ body {
     width: 45%;
     padding-left: 2.5%;
     padding-right: 2.5%;
-    font-size: var(--largeText);
+    font-size: var(--landingText);
     margin: 0;
 }
 
-#navigation {
-    width: 20vw;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+/* ABOUT PAGE */
+
+.workshop {
+    padding-left: 5vh;
+    padding-bottom: 5vh;
 }
 
-
-#logoContainer {
-    display: flex;
-    justify-content: center;
+.workshopPreview {
+    height: 5vw;
     align-items: center;
-    height: 15vh;
+}
+
+.workshopIcon {
+    vertical-align: bottom;
+}
+
+.workshopPreview h2 {
+    font-size: var(--subtitleText);
+    padding-left: 7vw;
+}
+
+.workshopDetails {
+    font-size: var(--mediumText);
+    padding-top: 3vh;
+}
+
+/* FOUNDERS PAGE */
+
+.flipCardContainer {
+    height: 40vh;
     width: 100%;
 }
 
+.flipCard {
+    width: 10vw;
+}
+
+.flipCardFront img {
+    max-width: 80%;
+}
+
+.flipCardFront, .flipCardBack {
+    position: absolute;
+}
+
+/* NAVIGATION PANE */
+
+#navigation {
+    width: 20vw;
+    height: 100%;
+}
+
+#logoContainer {
+    height: 20vh;
+    width: 100%;
+}
+
+#logoContainer a {
+    width: 100%;
+    height: 100%;
+}
+
 #logo {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-    max-height: 9vh;
+    max-height: 15vh;
     max-width: 80%;
 }
 
 #navBar {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 70vh;
+    height: 65vh;
     position: relative;
     overflow: visible;
 }
@@ -83,7 +170,7 @@ body {
     text-decoration: none;
     padding-top: 3vh;
     padding-bottom: 3vh;
-    font-size: var(--buttonText);
+    font-size: var(--navigationText);
     margin: 0;
     font-weight: bold;
     position: relative;
@@ -91,9 +178,6 @@ body {
 }
 
 #contactButtonContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 15vh;
     width: 100%;
 }

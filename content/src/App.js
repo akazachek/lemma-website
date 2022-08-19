@@ -10,7 +10,7 @@ function App(props) {
       <div id="page">
         <Page page={props.page} />
       </div>
-      <div id="navigation">
+      <div id="navigation" className="flexColumn">
         <LogoButton />
         <NavBar />
         <ContactButton />
