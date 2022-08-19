@@ -4,9 +4,21 @@ import NavButton from "./NavButton";
 function NavBar() {
   return (
     <div id="navBar">
-      <NavButton text="what" page="about" />
-      <NavButton text="who" page="founders" />
-      <NavButton text="how" page="apply" />
+      <NavButton
+        textShort="WHAT"
+        textLong="what does λemma provide?"
+        page="about"
+      />
+      <NavButton
+        textShort="WHO"
+        textLong="who is behind λemma?"
+        page="founders"
+      />
+      <NavButton
+        textShort="HOW"
+        textLong="how do i book or work for λemma?"
+        page="apply"
+      />
     </div>
   );
 }
