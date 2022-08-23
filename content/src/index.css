@@ -4,8 +4,9 @@
     --landingText: 11vh;
     --titleText: 6vh;
     --subtitleText: 5vh;
-    --navigationText: 4vh;
+    --largeText: 4vh;
     --mediumText: 3vh;
+    --smallText: 2vh;
     --mainColour: #68608C;
     --accentColour: #EBD4CB;
 }
@@ -28,10 +29,6 @@
     justify-content: center;
 }
 
-.onTop {
-    z-index: 100;
-}
-
 .extraOnTop {
     z-index: 200;
 }
@@ -51,6 +48,7 @@ body {
 
 #page {
     width: 80vw;
+    z-index: 100;
 }
 
 .blurb {
@@ -110,20 +108,53 @@ body {
 /* FOUNDERS PAGE */
 
 .flipCardContainer {
-    height: 40vh;
+    height: 60vh;
     width: 100%;
 }
 
 .flipCard {
-    width: 10vw;
+    height: 60vh;
+    width: 35vh;
+    margin: 1vw;
+    border-radius: 25px;
+    background-color: var(--mainColour);
 }
 
-.flipCardFront img {
-    max-width: 80%;
-}
-
-.flipCardFront, .flipCardBack {
+.flipCardSide {
     position: absolute;
+    height: 60vh;
+    width: 35vh;
+}
+
+.flipCardSide img {
+    border-radius: 25px;
+    height: 35vh;
+}
+
+.flipCardSide h2, .flipCardSide p {
+    color: var(--accentColour);
+    margin-bottom: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.flipCardSide h2 {
+    font-size: var(--mediumText);
+    margin-top: 3vh;
+    height: 4vh;
+}
+
+.flipCardSide p {
+    margin-top: 1vh;
+    font-size: var(--smallText);
+    margin-bottom: 2vh;
+}
+
+.opacityGradient {
+    overflow: hidden;
+    height: 10vh;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+    from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
 
 /* NAVIGATION PANE */
@@ -170,7 +201,7 @@ body {
     text-decoration: none;
     padding-top: 3vh;
     padding-bottom: 3vh;
-    font-size: var(--navigationText);
+    font-size: var(--largeText);
     margin: 0;
     font-weight: bold;
     position: relative;

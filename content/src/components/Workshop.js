@@ -9,7 +9,7 @@ function Workshop(props) {
   const [open, setOpen] = useState(false);
 
   /* 
-  this deserves some explaining. on page load, the first icon initially has
+  this deserves some explaining. on page load, the top icon initially has
   rotation FROM (45 deg) and then transitions to rotation ENTER (0 deg).
 
   when clicked, open <- true, and so the top icon gets rotation LEAVE (45 deg).
@@ -41,11 +41,7 @@ function Workshop(props) {
     <div className="workshop flexColumn">
       <div className="workshopPreview flexRow">
         {iconTransition((style, isOpen) => (
-          <animated.div
-            className="onTop"
-            onClick={() => setOpen(!open)}
-            style={style}
-          >
+          <animated.div onClick={() => setOpen(!open)} style={style}>
             <IconContext.Provider
               value={{
                 color: COLOURS.main,
