@@ -1,9 +1,17 @@
 import React from "react";
+import { COLOURS } from "../components/COLOURS";
+import ApplicationTable from "../components/ApplicationTable";
 
 function Apply() {
   return (
-    <div className="pageApply">
-      <p>click here to win</p>
+    <div className="pageApply flexColumn">
+      <div className="blurb">
+        <h1>
+          how are you looking to use{" "}
+          <span style={{ color: COLOURS.main }}>λ</span>emma?
+        </h1>
+      </div>
+      <ApplicationTable />
     </div>
   );
 }

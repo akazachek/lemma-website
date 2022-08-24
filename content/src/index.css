@@ -157,6 +157,43 @@ body {
     from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
 
+/* APPLY PAGE */
+
+.appTable {
+    height: 60vh;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.appTableTab {
+    height: 100%;
+    width: 50%;
+    margin: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: var(--smallText);
+}
+
+.appTableTab:hover {
+    background-color: var(--mainColour);
+    color: var(--accentColour);
+}
+
+.tabOpen {
+    background-color: var(--mainColour);
+    color: var(--accentColour);
+}
+
+.tabClosed {
+    background-color: var(--accentColour);
+    color: var(--mainColour);
+}
+
+.appTableContent {
+    background-color: var(--mainColour);
+}
+
+
 /* NAVIGATION PANE */
 
 #navigation {
