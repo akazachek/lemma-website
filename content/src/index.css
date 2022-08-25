@@ -83,6 +83,7 @@ button {
     margin: 0;
 }
 
+
 /* ABOUT PAGE */
 
 .workshop {
@@ -216,12 +217,13 @@ form button {
 }
 
 .formColumn {
-    width: 100%;
+    width: 50%;
     padding-left: 10%;
     padding-right: 10%;
 }
 
 .formContainer {
+    width: 100%;
     overflow-y: scroll;
 }
 
@@ -230,6 +232,10 @@ label {
     margin-bottom: 2%;
     font-size: var(--smallText);
     color: var(--accentColour);
+}
+
+#resume {
+    padding-bottom: 1vh;
 }
 
 
@@ -292,6 +298,29 @@ label {
 #contactButtonContainer button {
     margin-left: 10%;
     margin-right: 10%;
+}
+
+/* CONTACT BUTTON */
+
+#contactButton {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: var(--mainColour);
+    color: var(--accentColour);
+    font-size: var(--subtitleText);
+    border: 0;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#contactButton:hover {
+    background-color: var(--accentColour);
+    color: var(--mainColour);
 }
 
 

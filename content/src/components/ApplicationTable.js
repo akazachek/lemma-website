@@ -39,7 +39,7 @@ function ApplicationTable() {
     { label: "Email of Main Contact", type: "email", name: "email" },
     { label: "Phone Number of Main Contact", type: "tel", name: "phone" },
     {
-      label: "Tell us a little about your request.",
+      label: "Tell us a little about your requests!",
       type: "textarea",
       name: "request"
     }

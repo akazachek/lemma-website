@@ -37,7 +37,6 @@ def render(page):
     rendered_html = render.stdout.read()
     # decode to utf-8 and then strip newline
     root_html = rendered_html.decode("utf-8").strip()
-    print(root_html)
     return render_template("index.html", root_html=root_html)
 
 
@@ -46,6 +45,7 @@ def render(page):
 @lemma.route("/about", defaults={"page": "about"})
 @lemma.route("/founders", defaults={"page": "founders"})
 @lemma.route("/apply", defaults={"page": "apply"})
+@lemma.route("/contact", defaults={"page": "contact"})
 def serve(page):
     return render(page)
 
@@ -58,6 +58,11 @@ def process_form():
     elif request.form["formType"] == "school":
         processForm.school_form(mail, request.form)
     return redirect("/submission")
+
+
+@lemma.errorhandler(404)
+def page_not_found(e):
+    return render("error")
 
 
 # for starting flask by running the file

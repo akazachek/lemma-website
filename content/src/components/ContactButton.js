@@ -3,7 +3,9 @@ import React from "react";
 function ContactButton() {
   return (
     <div id="contactButtonContainer" className="centred">
-      <button id="contactButton">contact us</button>
+      <a href="/contact" id="contactButton">
+        get in touch.
+      </a>
     </div>
   );
 }
