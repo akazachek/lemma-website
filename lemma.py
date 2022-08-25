@@ -1,5 +1,5 @@
 from logging import root
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_restful import Resource, Api
 from flask_cors import CORS
 from api.api import api_handler
@@ -41,16 +41,23 @@ def render(page):
     return render_template("index.html", root_html=root_html)
 
 
-@lemma.route("/", defaults={"page": "landing"}, methods=['POST', 'GET'])
-@lemma.route("/about", defaults={"page": "about"}, methods=['POST', 'GET'])
-@lemma.route("/founders", defaults={"page": "founders"}, methods=['POST', 'GET'])
-@lemma.route("/apply", defaults={"page": "apply"}, methods=['POST', 'GET'])
+@lemma.route("/", defaults={"page": "landing"})
+@lemma.route("/submission", defaults={"page": "submission"})
+@lemma.route("/about", defaults={"page": "about"})
+@lemma.route("/founders", defaults={"page": "founders"})
+@lemma.route("/apply", defaults={"page": "apply"})
 def serve(page):
-    if request.method == "GET":
-        return render(page)
-    else:
-        processForm.instructor_form(mail, request.form)
-        return "yes"
+    return render(page)
+
+
+@lemma.route("/apply", methods=["POST"])
+def process_form():
+    if request.form["formType"] == "instructor":
+        resume = request.files["resume"]
+        processForm.instructor_form(mail, request.form, resume)
+    elif request.form["formType"] == "school":
+        processForm.school_form(mail, request.form)
+    return redirect("/submission")
 
 
 # for starting flask by running the file

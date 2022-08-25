@@ -44,6 +44,10 @@ body {
     height: 100vh;
 }
 
+button {
+    font-family: 'Didact Gothic', sans-serif;
+}
+
 /* PAGES */
 
 #page {
@@ -191,6 +195,41 @@ body {
 
 .appTableContent {
     background-color: var(--mainColour);
+}
+
+form {
+    margin: 10%;
+    height: 80%;
+    width: 80%;
+}
+
+form button {
+    margin-top: 5%;
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 30%;
+    height: 5vh;
+    font-size: var(--mediumText);
+    background-color: var(--accentColour);
+    color: var(--mainColour);
+    border: 0
+}
+
+.formColumn {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.formContainer {
+    overflow-y: scroll;
+}
+
+label {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-size: var(--smallText);
+    color: var(--accentColour);
 }
 
 

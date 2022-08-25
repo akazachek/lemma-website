@@ -14,6 +14,37 @@ function ApplicationTable() {
     height: tab === 0 ? "0%" : "85%"
   });
 
+  const instructor_fields = [
+    { label: "First Name", type: "text", name: "firstName" },
+    { label: "Last Name", type: "text", name: "lastName" },
+    { label: "Email", type: "email", name: "email" },
+    { label: "Phone Number", type: "tel", name: "phone" },
+    { label: "Address", type: "text", name: "address" },
+    { label: "City", type: "text", name: "city" },
+    { label: "University", type: "text", name: "uni" },
+    {
+      label: "Graduation Date (Actual or Expected)",
+      type: "date",
+      name: "grad"
+    },
+    { label: "Comments", type: "textarea", name: "comments" },
+    { label: "Resume", type: "file", name: "resume" }
+  ];
+
+  const school_fields = [
+    { label: "School Name", type: "text", name: "school" },
+    { label: "Address", type: "text", name: "address" },
+    { label: "City", type: "text", name: "city" },
+    { label: "Name of Main Contact", type: "text", name: "contact" },
+    { label: "Email of Main Contact", type: "email", name: "email" },
+    { label: "Phone Number of Main Contact", type: "tel", name: "phone" },
+    {
+      label: "Tell us a little about your request.",
+      type: "textarea",
+      name: "request"
+    }
+  ];
+
   return (
     <div className="appTable flexColumn">
       <animated.div className="flexRow" style={tabSpring}>
@@ -37,8 +68,11 @@ function ApplicationTable() {
           <Fragment></Fragment>
         ) : (
           <Fragment>
-            <h1 style={{ fontSize: "large" }}>hello</h1>
-            <Form />
+            <Form
+              file={true}
+              formType={tab === 1 ? "instructor" : "school"}
+              fields={tab === 1 ? instructor_fields : school_fields}
+            />
           </Fragment>
         )}
       </animated.div>
